@@ -1,27 +1,31 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
+// import {Container,Row, Col} from "react-bootstrap";
 import LeftPanel from "./components/LeftPanel";
 import RightPanel from "./components/RightPanel";
 import Sidebar from "./components/Sidebar";
+
 class App extends Component {
-  render() {
-    return (
-      <div className=" d-flex">
-        <div className=" sidebar bg-white">
-          <Sidebar />
-        </div>
-        <div className="main p-4">
-          <div className="row m-0 mt-5">
-            <div className="col-lg-6 my-2 col-md-6 col-xs-12">
-              <LeftPanel />
+    render() {
+        return (
+            <div className="wrapper">
+                <aside className="sidebar d-none d-lg-block">
+                    <Sidebar/>
+                </aside>
+                <main className="main">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6 mb-3 d-none d-lg-block">
+                                <LeftPanel/>
+                            </div>
+                            <div className="col-lg-6 mb-3">
+                                <RightPanel/>
+                            </div>
+                        </div>
+                    </div>
+                </main>
             </div>
-            <div className="col-lg-6 my-2 col-md-6 col-xs-12">
-              <RightPanel />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+        );
+    }
 }
 
 export default App;

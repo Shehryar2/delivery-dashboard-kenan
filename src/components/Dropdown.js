@@ -2,18 +2,15 @@ import React from "react";
 
 const Dropdown = ({ name, badge }) => {
   return (
-    <div class="dropdown form-control">
-      <a
-        class="btn w-100 dropdown-toggle"
-        href="#"
+    <div className="dropdown">
+      <a className="dropdown-toggle" href="#"
         role="button"
         id="dropdownMenuLink"
         data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
+        aria-expanded="false">
         {name && name}
         {badge && (
-          <span class="badge rounded-pill bg-yellow text-warning p-1 px-2">
+          <span className="badge rounded-pill bg-yellow text-warning p-1 px-2">
             Aswan
             <svg
               className="ml-2"
@@ -31,47 +28,49 @@ const Dropdown = ({ name, badge }) => {
           </span>
         )}
       </a>
-
-      <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuLink">
-        <div className="m-2">
-          <span class="badge rounded-pill bg-yellow text-warning px-2 mx-2">
+      <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <div className="dropdown-menu__header">
+          <span className="chip">
             All
           </span>
-          <span class="badge selected-badge rounded-pill bg-yellow text-warning px-2 mx-2">
+          <span className="chip active">
             Select X
           </span>
-          <span class="badge rounded-pill bg-yellow text-warning px-3 mx-2">
+          <span className="chip">
             Exclude X
           </span>
-          <span class="badge rounded-pill bg-yellow text-warning px-3 mx-2">
+          <span className="chip">
             None
           </span>
         </div>
-        <form class="px-4">
+        <form className="dropdown-menu__search">
           <input
             type="search"
-            class="form-control"
+            className="form-control"
             id="searchCoin"
             placeholder="Search..."
             autofocus="autofocus"
           />
         </form>
-        <li>
-          <a class="dropdown-item" href="#">
-            Action
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="#">
-            Another action
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="#">
-            Something else here
-          </a>
-        </li>
-      </ul>
+        <ul className="dropdown-menu__listing">
+          <li className="dropdown-menu__list">
+            <div className="form-check">
+              <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                <label className="form-check-label" htmlFor="flexRadioDefault1">
+                  City-1
+                </label>
+            </div>
+          </li>
+          <li className="dropdown-menu__list">
+            <div className="form-check">
+              <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+              <label className="form-check-label" htmlFor="flexRadioDefault2">
+                City-2
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

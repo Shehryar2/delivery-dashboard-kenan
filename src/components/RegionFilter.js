@@ -1,30 +1,25 @@
 import React from "react";
 import Dropdown from "./Dropdown";
+import DropdownChip from "./Dropdown-chip";
 
 const RegionFilter = () => {
   return (
     <div>
-      <div className="d-flex my-3">
-        <div className="row w-100">
-          <label className="px-5 mb-3">Region</label>
-          <div className="col-6 px-4">
+        <div className="row">
+          <h3 className="mb-3">Region</h3>
+          <div className="col-md-6 mb-3">
             <Dropdown name={"City"} />
           </div>
-          <div className="col-6 px-4">
-            <Dropdown badge={true} />
+          <div className="col-md-6 mb-3">
+            <DropdownChip badge={true} />
           </div>
+            <div className="col-md-6 mb-3">
+              <Dropdown name={"Province"} />
+            </div>
+            <div className="col-md-6 mb-3">
+              <DropdownChip badge={true} />
+            </div>
         </div>
-      </div>
-      <div className="d-flex my-3">
-        <div className="row w-100">
-          <div className="col-6 px-4">
-            <Dropdown name={"Province"} />
-          </div>
-          <div className="col-6 px-4">
-            <Dropdown badge={true} />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
